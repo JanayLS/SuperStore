@@ -3,23 +3,15 @@
 // TODO: Define a class called Product with:
 class Product{
     // - A protected String field called name
-
-    // Protected access modifier keeps the name variable within the file
     protected String name;
     // - A protected double field called price
-
-    // Protected access modifier keeps the price variable within the file
     protected double price;
-
-    // private access modifier keeps the productId variable within the class
     // - A private final int productId
     private final int productId;
 
-    // public access modifier means the nextID variable can be used anywhere
     // - A public static int nextId to help generate unique IDs
     public static int nextId = 1001;
 
-    // public access modifier means the product constructor can be used anywhere
     // - A constructor that sets name, price, and assigns a unique ID
     public Product(String name, double price){
         this.name = name;
@@ -27,28 +19,23 @@ class Product{
         productId = nextId++;
     }
 
-    // public access modifier means the getName getter can be used anywhere
     // - Public getters for all fields
     public String getName(){
         return this.name;
     }
-    // public access modifier means the getPrice getter can be used anywhere
     public double getPrice(){
         return this.price;
     }
-    // public access modifier means the getProduct getter can be used anywhere
     public int getProductId(){
         return this.productId;
     }
 
-    // public access modifier means the toString method can be used anywhere
     // - Override toString() to return formatted product details
     @Override
     public String toString(){
         return "Product Name: " + this.name + "\nPrice: " + this.price + "\nProduct ID: " + this.productId;
     }
 
-    // public access modifier means the equals method can be used anywhere
     // - Override equals(Object o) to compare name and productId
     @Override
     public boolean equals(Object o){
@@ -71,15 +58,12 @@ class Product{
 
 // TODO: Define a subclass Electronics that extends Product
 class Electronics extends Product {
-    // private access modifier means the brand variable can be used only in this class
     // - Add a private String field called brand
     private String brand;
 
-    // private access modifier means the hasBattery variable can be used only in this class
     // - Add a private boolean field called hasBattery
     private boolean hasBattery;
 
-    // public access modifier means the Electronics constructor can be used anywhere
     // - Constructor takes all fields and uses super for shared ones
     public Electronics(String name, double price, String brand, boolean hasBattery) {
         super(name, price);
@@ -87,14 +71,12 @@ class Electronics extends Product {
         this.hasBattery = hasBattery;
     }
 
-    // public access modifier means the toString method can be used anywhere
     // - Override toString() to include brand and battery status
     @Override
     public String toString() {
         return "Product Name: " + this.name + "\nPrice: " + this.price + "\nBrand: " + this.brand + "\nBattery Status: " + this.hasBattery;
     }
 
-    // public access modifier means the warrantyInfo method can be used anywhere
     // 3. Add a method to Electronics called warrantyInfo() and mark it final
     public static final void warrantyInfo(){
 
@@ -104,15 +86,12 @@ class Electronics extends Product {
 
 // TODO: Define a subclass Grocery that extends Product
 class Grocery extends Product{
-    // private access modifier means the weight variable can be used only in this class
     // - Add a private double field called weight (in kg)
     private double weight;
 
-    // private access modifier means the isPerishable variable can be used only in this class
     // - Add a private boolean field called isPerishable
     private boolean isPerishable;
 
-    // public access modifier means the Grocery constructor can be used anywhere
     // - Constructor takes all fields and uses super for shared ones
     public Grocery(String name, double price, double weight, boolean isPerishable){
         super(name, price);
@@ -120,7 +99,6 @@ class Grocery extends Product{
         this.isPerishable = isPerishable;
     }
 
-    // public access modifier means the toString method can be used anywhere
     // - Override toString() to include weight and perishability
     @Override
     public String toString() {
@@ -192,3 +170,9 @@ class Coupon extends Product{
 }
 // 3. Add a method to Electronics called warrantyInfo() and mark it final
 // 4. Use access modifiers appropriately and explain your choices in comments
+
+// Protected access modifier keeps the variable/method/constructor within the file
+// private access modifier keeps the variable/method/constructor within the class
+// public access modifier means the variable/method/constructor can be used anywhere
+
+
